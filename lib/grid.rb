@@ -1,9 +1,6 @@
 class Grid
 
-  attr_reader :size
-
-  def initialize size=1
-    @size = size
+  def initialize
     @grid_arr = []
   end
 
@@ -11,7 +8,7 @@ class Grid
     @grid_arr << ship
   end
 
-  def grid_array
+  def grid_arr
     @grid_arr
   end
 

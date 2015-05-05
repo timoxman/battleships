@@ -9,6 +9,6 @@ feature 'player can play a game of battleships' do
 
   scenario 'user can place a ship on the board' do
     grid.place_ship(ship)
-    expect(ship.location).to eq grid.square
+    expect(grid.grid_arr.include?(ship)).to eq true
   end
 end
