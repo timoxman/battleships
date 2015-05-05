@@ -8,4 +8,8 @@ class Grid
     @grid_arr
   end
 
+  def place_ship ship
+    @grid_arr << ship
+  end
+
 end

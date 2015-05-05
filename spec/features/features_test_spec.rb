@@ -9,13 +9,13 @@ feature 'player can play a game of battleships' do
   let(:player) { Player.new }
 
   scenario 'user can place a ship on the board' do
-    player.place_ship(ship)
+    grid.place_ship(ship)
     expect(grid.grid_arr.include?(ship)).to eq true
   end
 
   scenario 'user has different ships to choose from' do
     arr = []
-    player_ships.each {|k, v| arr << v}
+    player.player_ships.each {|k, v| arr << v}
     arr.uniq
     expect(arr.uniq.length > 1).to eq true
   end

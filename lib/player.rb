@@ -1,3 +1,5 @@
+require 'grid'
+
 class Player
   attr_reader :player_ships
 
@@ -5,10 +7,6 @@ class Player
 
   def initialize
     @player_ships = PLAYER_SHIPS
-  end
-
-  def place_ship ship
-    @grid.grid_arr << ship
   end
 
 end
