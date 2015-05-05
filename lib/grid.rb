@@ -1,11 +1,18 @@
 class Grid
 
-  DEFAULT_SIZE = 1
-
   attr_reader :size
 
-  def intialize
-    @size = DEFAULT_SIZE
+  def initialize size=1
+    @size = size
+    @grid_arr = []
+  end
+
+  def place_ship ship
+    @grid_arr << ship
+  end
+
+  def grid_array
+    @grid_arr
   end
 
 end
