@@ -1,5 +1,5 @@
-Battleships
-===========
+Battleships MOFOS!!!!!!!
+========================
 
 Brief
 -----
