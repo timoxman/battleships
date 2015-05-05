@@ -4,10 +4,6 @@ class Grid
     @grid_arr = []
   end
 
-  def place_ship ship
-    @grid_arr << ship
-  end
-
   def grid_arr
     @grid_arr
   end
