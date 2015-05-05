@@ -12,4 +12,9 @@ feature 'player can play a game of battleships' do
     expect(game.create_player).to be true
   end
 
+  scenario 'create a new empty grid' do
+    game = Game.new
+    expect(game.create_grid).to be true
+  end
+
 end

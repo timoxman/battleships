@@ -12,5 +12,8 @@ describe Game do
       expect(subject.create_player).to be true
     end
 
+    it 'creates a new grid' do
+      expect(subject.create_grid).to be true
+    end
   end
 end
