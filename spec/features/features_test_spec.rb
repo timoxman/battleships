@@ -4,12 +4,17 @@ require 'ship'
 
 feature 'player can play a game of battleships' do
 
-  let(:board) { Board.new }
-  let(:ship) { Ship.new }
+  let(:board1) { Board.new(3) }
+  let(:ship1) { Ship.new(2) }
 
-  scenario 'user can place a ship on the board' do
-    board.place_ship(ship)
-    expect(board.grid).to include ship
+# As a player
+# So that I can prepare for the game
+# I would like to place a ship in a board location
+  scenario 'user can place a ship on the board (F1)' do
+    board1.place_ship(ship1, 2,"V")
+    expect(board1.fleet).to include ship1
+    expect(ship1.location).to eq 2
+    expect(board1.squares[2]).to eq "B"
   end
 
 end
