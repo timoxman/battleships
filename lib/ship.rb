@@ -6,8 +6,8 @@ class Ship
     @location = [] # this is a list of squares which the ship sits on top of
   end
 
-  def location
-    location = []
-  end
+  attr_reader :length
+  attr_accessor :location
+
 
 end

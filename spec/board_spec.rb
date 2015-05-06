@@ -4,7 +4,7 @@ describe Board do
 
   context 'begin a new game' do
 
-    let(:ship1) { double :ship }
+    let(:ship1) { double :ship, length: 2, location: [2,5 ] }
 
     it 'allows a ship to be placed anywhere on a board (UB1)' do
       board1 = Board.new(3)

@@ -13,7 +13,7 @@ feature 'player can play a game of battleships' do
   scenario 'user can place a ship on the board (F1)' do
     board1.place_ship(ship1, 2,"V")
     expect(board1.fleet).to include ship1
-    expect(ship1.location).to eq 2
+    expect(ship1.location[0]).to eq 2
     expect(board1.squares[2]).to eq "B"
   end
 
