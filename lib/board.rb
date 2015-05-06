@@ -51,6 +51,9 @@ class Board
       return "You missed!"
     when "B"
       @squares[location] = "H"
+      find the ship that was hit and remove from the array the locatio from the array which was hit
+      if the array is empty the ship sinks, otherwise its just hit.
+
       return "You've been hit!"
     when "M"
       return "You're a muppet, you already fired there!"

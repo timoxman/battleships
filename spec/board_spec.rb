@@ -32,6 +32,12 @@ describe Board do
       expect(board1.fire (21)).to eq "You missed!"
     end
 
+        it 'returns a message if you sink a ship (UB5)' do
+      board1 = Board.new(5)
+      board1.squares = ["H", "H", "B", "S", "S", "S", "S", "S", "S", "S", "S", "S", "S", "S", "S", "S", "S", "S", "S", "S", "S", "S", "S", "S", "S"]
+      expect(board1.fire (2)).to eq "You've been hit and sunk the ship"
+    end
+
 
 
   end

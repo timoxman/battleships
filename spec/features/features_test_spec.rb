@@ -28,4 +28,11 @@ feature 'player can play a game of battleships' do
     expect(board1.fire(10)).to eq "You're a muppet, you already fired there!"
   end
 
+    scenario 'user can fire at a ship and sink it (F3)' do
+    board1.place_ship(ship1,0,"H")
+    expect(board1.fire(0)).to eq "You've been hit!"
+    expect(board1.fire(1)).to eq "You've been hit!"
+    expect(board1.fire(2)).to eq "You've been hit and sunk the ship"
+  end
+
 end
