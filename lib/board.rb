@@ -11,7 +11,7 @@ class Board
     @fleet = []
   end
 
-  attr_reader :squares
+  attr_accessor :squares
   attr_reader :fleet
   # def fleet
   #   @fleet
@@ -23,16 +23,43 @@ class Board
     @fleet << ship
 
     #Update the board - put the ship on the board at the right location. This will involve changing the correct elements of the squares array from there current value to equal "B" for boat
-    if orientation == "V" && ship.length == 2
-      @squares[location] = "B"
-      @squares[location + @dimensions] = "B"
+    if orientation == "V"
+      (0..(ship.length - 1)).each{|i| @squares[location + (@dimensions * i)]  = "B" }
+    end
+
+    if orientation == "H"
+      (0..(ship.length - 1)).each{|i| @squares[location + i] = "B"}
     end
 
     #Update the ship - save the location of the ship on the ship
-    if orientation == "V" && ship.length == 2
-      ship.location[0] = location
-      ship.location[1] = location + @dimensions
+    if orientation == "V"
+      (0..(ship.length - 1)).each{|i| ship.location[i] = location + (@dimensions * i) }
     end
+
+    if orientation == "H"
+      (0..(ship.length - 1)).each{|i| ship.location[i] = location + i }
+    end
+
+
+  end
+
+  def fire location
+
+    case @squares[location]
+    when "S"
+      @squares[location] = "M"
+      return "You missed!"
+    when "B"
+      @squares[location] = "H"
+      return "You've been hit!"
+    when "M"
+      return "You're a muppet, you already fired there!"
+    when "H"
+      return "You already hit that square"
+    else
+      raise "That shot didn't register"
+    end
+
 
   end
 
