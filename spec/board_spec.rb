@@ -1,6 +1,6 @@
-require 'grid'
+require 'board'
 
-describe Grid do
+describe Board do
 
   context 'begin a new game' do
 
@@ -8,7 +8,7 @@ describe Grid do
 
     it 'allows a ship to be placed on a square' do
       subject.place_ship(ship)
-      expect(subject.grid_arr.include?(ship)).to eq true
+      expect(subject.grid).to include ship
     end
 
   end
